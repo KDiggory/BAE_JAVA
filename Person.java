@@ -1,41 +1,76 @@
-package com.bae.oop;
+package com.bae.person;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+
 
 public class Person {
 	
+	
 	private String name;
-	private float height;
-	private int shoeSize;
 	private int age;
 	private String jobTitle;
-	private String favouriteAnimal;
+	static ArrayList<Person> people = new ArrayList<>();
+	private int numPeople = 0;
 	
-	public Person(String name, float height, int shoeSize, int age, String jobTitle, String favouriteAnimal) {
-		super();
-		this.name = name;
-		this.height = height;
-		this.shoeSize = shoeSize;
-		this.age = age;
-		this.jobTitle = jobTitle;
-		this.favouriteAnimal = favouriteAnimal;
+	
+	public static ArrayList<Person> getPeople() {
+		return people;
 	}
 
-	public Person(String name, float height) {
+	public static void setPeople(ArrayList<Person> people) {
+		Person.people = people;
+	}
+
+	public int getNumPeople() {
+		return numPeople;
+	}
+
+	public Person(String name, int age, String jobTitle) {
 		super();
 		this.name = name;
-		this.height = height;
+		this.age = age;
+		this.jobTitle = jobTitle;
+		people.add(this);
+		 numPeople ++;
 	}
 	
-	public void methodOne() {
-		System.out.println("Hello there " + name + ", I hear your favourite animal is the " + favouriteAnimal);
+	public static void searchName(Person name) {
+		int index = people.indexOf(name);
+		System.out.println(index);
+		System.out.println(people.get(index));
 		
 	}
 	
-	public void methodTwo() {
-		age = age +10;
-		System.out.println(name + ", In 10 years you will be " + age + " years old!!");
+	public String getName() {
+		return name;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getJobTitle() {
+		return jobTitle;
+	}
+
+	public void setJobTitle(String jobTitle) {
+		this.jobTitle = jobTitle;
+	}
+
+	@Override
+	public String toString() {
+		return "\nPerson [name=" + name + ", age=" + age + ", jobTitle=" + jobTitle + "]";
+	}
+
 	
-	public void methodThree() {
-		System.out.println(name + " Your job is: " + jobTitle);
-	}
 }
