@@ -50,11 +50,19 @@ public class Factorial {
 	public static List<Integer> oddList = new ArrayList();
 	public static List<Integer> singleList = new ArrayList();
 	
-	public static List<Integer> addToList(){
-		list.add(1464); list.add(41); list.add(75);list.add(6857);list.add(188);list.add(324);list.add(5);
-		list.add(451);list.add(16);list.add(561);;list.add(1321);list.add(112);list.add(4561);list.add(1987);
-		return list;
+	public static void addToList(List<Integer> list){
+		addToListRecursive(list);
+				
 	}
+	public static void addToListRecursive(List<Integer> list){
+		if (list.size() < 1000) {
+		list.add((int) (Math.random()*1000));
+		addToListRecursive(list);
+		} 
+			
+		}
+	
+	
 	
 	public static void nthOddElement(List list, int n) {
 		for (int i = 0; i < list.size(); i++) {
@@ -89,13 +97,13 @@ public class Factorial {
 		//findFactorial(4);
 		//findFactorial(25);
 		//findFactorialRecursive(4);
-		addToList();
-		//nthOddElement(list, 5);
+		addToList(list);
+		nthOddElement(list, 5);
 		linearSearch(list, 112);
-		singleList.add(10);
+		//singleList.add(10);
 		findMax(list);
-		findMax(singleList);
-		
+		//findMax(singleList);
+		System.out.println(list);
 		
 	}
 
