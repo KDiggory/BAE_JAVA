@@ -13,6 +13,10 @@ public class PersonRunner {
 		george.methodTwo();
 		huxley.methodOne();
 		oswin.methodTwo();
+
+		huxley.methodThree();
+		oswin.methodThree();
+
 	
 
 	}

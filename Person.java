@@ -2,12 +2,14 @@ package com.bae.oop;
 
 public class Person {
 	
-	public String name;
-	public float height;
-	public int shoeSize;
-	public int age;
-	public String jobTitle;
-	public String favouriteAnimal;
+
+	private String name;
+	private float height;
+	private int shoeSize;
+	private int age;
+	private String jobTitle;
+	private String favouriteAnimal;
+
 	
 	public Person(String name, float height, int shoeSize, int age, String jobTitle, String favouriteAnimal) {
 		super();
@@ -34,4 +36,10 @@ public class Person {
 		age = age +10;
 		System.out.println(name + ", In 10 years you will be " + age + " years old!!");
 	}
+
+	
+	public void methodThree() {
+		System.out.println(name + " Your job is: " + jobTitle);
+	}
+
 }
